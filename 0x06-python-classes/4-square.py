@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-"""Defines a Square"""
 
+"""Defines a Square"""
 
 class Square:
     """Square class with private instance attribute size"""
@@ -21,5 +21,5 @@ class Square:
             self.__size = value
 
     def area(self):
-        """Method to calculate the area of the square"""
+        """Method to calculate the area of the Square"""
         return self.__size ** 2
