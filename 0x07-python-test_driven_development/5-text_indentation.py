@@ -11,7 +11,7 @@ def text_indentation(text):
 
     separators = ['.', '?', ':']
     start = 0
-    for i char in enumerate(text):
+    for i, char in enumerate(text):
         if char in separators:
             print(text[start:i + 1].strip() + '\n')
             if i + 1 < len(text) and text[i + 1] == ' ':
