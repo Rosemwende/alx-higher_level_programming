@@ -1,0 +1,25 @@
+Function to multiply two matrices.
+
+    Args:
+        m_a (list of lists): First matrix.
+        m_b (list of lists): Second matrix.
+
+    Returns:
+    list of lists: Resultant matrix.
+
+    Raises:
+        TypeError: If m_a or m_b is not a list of lists, or if the elements are not integers or floats, or if the matrices are not rectangular.
+        ValueError: If m_a or m_b is empty, or if the matrices cannot be multiplied.
+
+    >>> matrix_mul([[1, 2], [3, 4]], [[1, 2], [3, 4]])
+    [[7, 10], [15, 22]]
+    >>> matrix_mul([[1, 2]], [[3, 4], [5, 6]])
+    [[13, 16]]
+    >>> matrix_mul([[1, 2, 3], [4, 5, 6]], [[1, 2], [3, 4], [5, 6]])
+    [[22, 28], [49, 64]]
+    >>> matrix_mul([[1, 2, 3], [4, 5, 6]], [[1, 2, 3], [4, 5, 6]])
+    [[14, 32, 50], [32, 77, 122]]
+
+if __name__ == "__main__":
+    import doctest
+    doctest.testmod()
