@@ -1,6 +1,7 @@
 #include <Python.h>
 #include <object.h>
 #include <unicodeobject.h>
+
 void print_python_string(PyObject *p)
 {
     Py_ssize_t length;
