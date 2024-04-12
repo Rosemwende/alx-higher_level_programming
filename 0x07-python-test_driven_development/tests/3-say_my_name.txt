@@ -1,0 +1,25 @@
+  """
+    Function to print a formatted name.
+
+    Args:
+        first_name (str): First name.
+        last_name (str): Last name (default is "").
+
+    Raises:
+        TypeError: If first_name or last_name are not strings.
+
+    >>> say_my_name("John", "Smith")
+    My name is John Smith
+    >>> say_my_name("Walter", "White")
+    My name is Walter White
+    >>> say_my_name("Bob")
+    My name is Bob 
+    >>> say_my_name(12, "White")
+    Traceback (most recent call last):
+        ...
+    TypeError: first_name must be a string
+    """
+
+if __name__ == "__main__":
+    import doctest
+    doctest.testmod()
