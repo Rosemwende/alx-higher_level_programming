@@ -1,0 +1,29 @@
+Function to lazily multiply two matrices using NumPy.
+
+    Args:
+        m_a (list of lists): First matrix.
+        m_b (list of lists): Second matrix.
+
+    Returns:
+        numpy.ndarray: Resultant matrix.
+
+    Raises:
+        TypeError: If m_a or m_b is not a list of lists, or if the elements are not integers or floats, or if the matrices are not rectangular.
+        ValueError: If m_a or m_b is empty, or if the matrices cannot be multiplied.
+
+    >>> lazy_matrix_mul([[1, 2], [3, 4]], [[1, 2], [3, 4]])
+    array([[ 7, 10],
+           [15, 22]])
+    >>> lazy_matrix_mul([[1, 2]], [[3, 4], [5, 6]])
+    array([[13, 16]])
+    >>> lazy_matrix_mul([[1, 2, 3], [4, 5, 6]], [[1, 2], [3, 4], [5, 6]])
+    array([[22, 28],
+           [49, 64]])
+    >>> lazy_matrix_mul([[1, 2, 3], [4, 5, 6]], [[1, 2, 3], [4, 5, 6]])
+    array([[14, 32, 50],
+           [32, 77, 122]])
+
+if __name__ == "__main__":
+    import doctest
+    import numpy as np
+    doctest.testmod()
