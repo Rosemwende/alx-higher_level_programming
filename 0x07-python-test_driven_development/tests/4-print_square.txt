@@ -1,19 +1,11 @@
-#!/usr/bin/python3
-
-"""
-This module contains doctests for the print_square function.
-"""
-
-def print_square(size):
-    """
-    Function to print a square of '#' characters.
+Function to print a square of '#' characters
 
     Args:
-        size (int): Size length of the square.
+        size (int): Size length of the square
 
     Raises:
-        TypeError: If size is not an integer.
-        ValueError: If size is less than 0.
+        TypeError: If size is not an integer
+        ValueError: If size is less than 0
 
     >>> print_square(4)
     ####
@@ -42,7 +34,6 @@ def print_square(size):
     Traceback (most recent call last):
         ...
     ValueError: size must be >= 0
-    """
 
 if __name__ == "__main__":
     import doctest
