@@ -1,3 +1,21 @@
+"""
+This module contains doctests for the add_integer function
+"""
+
+def add_integer(a, b=98):
+    """
+    Function to add two integers
+
+    Args:
+        a (int): First integer
+        b (int): Second integer (default is 98)
+
+    Returns:
+        int: The addition of a and b
+
+    Raises:
+        TypeError: If a or b are not integers or floats
+
  >>> add_integer(1, 2)
     3
     >>> add_integer(100, -2)
