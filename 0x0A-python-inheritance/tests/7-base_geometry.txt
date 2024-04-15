@@ -1,0 +1,14 @@
+# Test Case 1
+Create a BaseGeometry object
+Call integer_validator method with name="test" and value=10
+Expected Output: No exception raised
+
+# Test Case 2
+Create a BaseGeometry object
+Call integer_validator method with name="test" and value="not_an_integer"
+Expected Output: TypeError raised with message "test must be an integer"
+
+# Test Case 3
+Create a BaseGeometry object
+Call integer_validator method with name="test" and value=0
+Expected Output: ValueError raised with message "test must be greater than 0"
