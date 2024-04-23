@@ -34,3 +34,12 @@ class Base:
         if list_dictionaries is None or len(list_dictionaries) == 0:
             return "[]"
         return json.dumps(list_dictionaries)
+
+    def create(cls, **dictionary):
+        """ Returns an instance with all attributes already set """
+        if cls.__name__ == "Rectangle":
+            obj = cls(1, 1)  # Dummy instance
+        elif cls.__name__ == "Square":
+            obj = cls(1)  # Dummy instance
+        obj.update(**dictionary)
+        return obj
