@@ -54,3 +54,34 @@ class Base:
                 return [cls.create(**d) for d in json_list]
         except FileNotFoundError:
             return []
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """ Serializes list_objs to CSV file """
+        filename = cls.__name__ + ".csv"
+        with open(filename, "w", newline='') as file:
+            writer = csv.writer(file)
+            if cls.__name__ == "Rectangle":
+                for obj in list_objs:
+                    writer.writerow([obj.id, obj.width, obj.height, obj.x, obj.y])
+            elif cls.__name__ == "Square":
+                for obj in list_objs:
+                    writer.writerow([obj.id, obj.size, obj.x, obj.y])
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """ Deserializes CSV file to list of instances """
+        filename = cls.__name__ + ".csv"
+        try:
+            with open(filename, "r") as file:
+                reader = csv.reader(file)
+                instances = []
+                for row in reader:
+                    if cls.__name__ == "Rectangle":
+                        instance = cls(int(row[1]), int(row[2]), int(row[3]), int(row[4]), int(row[0]))
+                    elif cls.__name__ == "Square":
+                        instance = cls(int(row[1]), int(row[2]), int(row[3]), int(row[0]))
+                    instances.append(instance)
+                return instances
+        except FileNotFoundError:
+            return []
