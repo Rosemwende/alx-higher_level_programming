@@ -24,3 +24,22 @@ class Square(Rectangle):
         """ Returns string representation of the instance """
         return "[Square] ({}) {}/{} - {}".format(
             self.id, self.x, self.y, self.width)
+
+        def update(self, *args, **kwargs):
+        """ Assigns arguments to attributes """
+        if args:
+            attr_names = ['id', 'size', 'x', 'y']
+            for i in range(len(args)):
+                setattr(self, attr_names[i], args[i])
+        else:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
+
+    def to_dictionary(self):
+        """ Returns the dictionary representation of a Square """
+        return {
+            'id': self.id,
+            'size': self.size,
+            'x': self.x,
+            'y': self.y
+        }
