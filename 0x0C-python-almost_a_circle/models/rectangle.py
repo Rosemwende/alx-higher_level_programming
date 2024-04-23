@@ -41,3 +41,13 @@ class Rectangle(Base):
         attr_names = ['id', 'width', 'height', 'x', 'y']
         for i in range(len(args)):
             setattr(self, attr_names[i], args[i])
+
+    def update(self, *args, **kwargs):
+        """ Assigns arguments to attributes """
+        if args:
+            attr_names = ['id', 'width', 'height', 'x', 'y']
+            for i in range(len(args)):
+                setattr(self, attr_names[i], args[i])
+        else:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
