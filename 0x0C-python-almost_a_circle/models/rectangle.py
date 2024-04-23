@@ -13,6 +13,10 @@ class Rectangle(Base):
         self.x = x
         self.y = y
 
+    def area(self):
+        """ Returns the area of the rectangle """
+        return self.width * self.height
+
      def display(self):
         """ Prints the Rectangle instance with # """
         for _ in range(self.y):
