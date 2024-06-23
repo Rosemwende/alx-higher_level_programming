@@ -7,22 +7,27 @@ if __name__ == "__main__":
     mysql_username = sys.argv[1]
     mysql_password = sys.argv[2]
     database_name = sys.argv[3]
-
-    db = MySQLdb.connect(
+    
+    try:
+        conn = MySQLdb.connect(
             host="localhost",
             port=3306,
             user=mysql_username,
             passwd=mysql_password,
-            db=database_name
+            db=database_name,
+            charset="utf8"
             )
 
-    cursor = db.cursor()
+    except MySQLdb.Error as e:
+        print("Error connecting to database: {}".format(e))
+        sys.exit(1)
 
-    cursor.execute("SELECT * FROM states ORDER BY id ASC")
-    states = cursor.fetchall()
+        cur = conn.cursor()
+        cursor.execute("SELECT * FROM states ORDER BY id ASC")
+        rows = cursor.fetchall()
 
-    for state in states:
-        print(state)
+    for row in rows:
+        print(row)
 
         cursor.close()
-        db.close()
+        conn.close()
