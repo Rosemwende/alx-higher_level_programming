@@ -13,7 +13,7 @@ class State(Base):
 
     __tablename__ = 'states'
 
-    id = Column(Integer, primary_key=True, autoincrement=True, nullable=False
+    id = Column(Integer, primary_key=True, autoincrement=True, nullable=False)
             name = Column(String(128), nullable=False)
 
             if __name__ == "__main__:"
@@ -26,4 +26,4 @@ class State(Base):
 
             engine = create_engine(f'mysql+mysqldb://{username}:{password}@localhost:3306/{database}', pool_pre_ping=True)
 
-            Base.metadata.create_all(engine)
+           iiase.metadata.create_all(engine)
