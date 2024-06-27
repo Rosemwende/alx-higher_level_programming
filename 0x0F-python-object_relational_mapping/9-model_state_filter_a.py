@@ -9,6 +9,10 @@ from sqlalchemy.orm import sessionmaker
 from model_state import Base, State
 
 if __name__ == "__main__":
+    if len(sys.argv) != 4:
+        print("Usage: ./9-model_state_filter_a.py <username> <password> <database>")
+        sys.exit(1)
+
     username = sys.argv[1]
     password = sys.argv[2]
     database = sys.argv[3]
